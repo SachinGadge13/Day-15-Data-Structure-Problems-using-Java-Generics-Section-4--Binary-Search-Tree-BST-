@@ -2,7 +2,7 @@ package com.bridgelabz.BinarySearchTree;
 
 public class BSTImplimentation {
     /*
-     * @Purpose : Insert Elements in BST
+     * @Purpose : Insert & Search And Getting Size Of Elements in BST
      */
     public static void main(String[] args) {
         BST tree = new BST();
@@ -24,6 +24,8 @@ public class BSTImplimentation {
         tree.printInorder(root);
         System.out.println();
         System.out.println("Number of Nodes in binary tree :" + tree.size());
+        System.out.println(tree.search(root, 63));
+        System.out.println(tree.search(root, 55));
     }
 
 }
