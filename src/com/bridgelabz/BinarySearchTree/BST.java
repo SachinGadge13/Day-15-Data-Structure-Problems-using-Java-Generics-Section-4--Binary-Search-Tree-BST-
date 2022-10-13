@@ -18,15 +18,14 @@ class Node {
 
 }
 
-/*
- * @Purpose : Insert Element in BST
- *
- * @Param : Node,Data
- *
- * @return : Node
- */
 public class BST {
+    int size = 0;
 
+    /*
+     * @Purpose : Insert Elements in BST
+     *
+     * @Return : Node
+     */
     public Node insert(Node node, int data) {
 
         if (node == null) {
@@ -38,14 +37,26 @@ public class BST {
         } else if (data > node.data) {
             node.right = insert(node.right, data);
         }
+
         return node;
     }
 
+    /*
+     * @Purpose : Create New Node For Elements in BST
+     *
+     * @Return : MyNode
+     */
     private Node createNewNode(int data) {
         Node mynode = new Node(data);
+        size += 1;
         return mynode;
     }
 
+    /*
+     * @Purpose : Print InOrder Traversal in BST
+     *
+     * @Return : Null
+     */
     public void printInorder(Node node) {
         if (node == null) {
             return;
@@ -55,4 +66,14 @@ public class BST {
         printInorder(node.right);
 
     }
+
+    /*
+     * @Purpose : Getting Size Of BST
+     *
+     * @Return : Size
+     */
+    public int size() {
+        return size;
+    }
+
 }
